@@ -1,0 +1,26 @@
+{
+  "name": "iwaca2borgest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thenilde/IWACA2BorgesT.git"
+  },
+  "author": "Tenilde",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Thenilde/IWACA2BorgesT/issues"
+  },
+  "homepage": "https://github.com/Thenilde/IWACA2BorgesT#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.3",
+    "nodemon": "^2.0.7"
+  }
+}
