@@ -9,7 +9,8 @@ const musicController=require('./controllers/musicController');
 var app=express();
 
 app.set('views' ,path.join(__dirname, '/views'));
-//I stopped here
+app.engine('hbs',exphbs({extname: 'hbs',defaultLayout:'mainLayout',layoutDir:__dirname + '/views/layout'}));
+app.set('view engine', 'hbs');
 
 app.listen(3000, ()=>{
     console.log('Express server start at port :3000');
