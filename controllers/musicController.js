@@ -16,6 +16,8 @@ router.post('/',(req, res)=>{
 });
 
 function insertRecord(req,res){
+ var music=new Music();
+ music.Instrument
 
 }
 
