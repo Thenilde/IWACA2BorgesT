@@ -2,15 +2,10 @@ const mongoose=require('mongoose');
 
 var musicSchema= new mongoose.Schema({
 
-    Instrumento:{
+    Instrument:{
         type:String,
         requered:true
         
-    },
-
-    Instrumento:{
-        type:String,
-        requered:true
     },
 
     Price:{
@@ -28,7 +23,7 @@ var musicSchema= new mongoose.Schema({
         requered:true
     },
 
-    Commands:{
+    Comments:{
         type:String,
         requered:true
     },

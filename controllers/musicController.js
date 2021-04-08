@@ -1,5 +1,8 @@
 const express=require('express');
 var router=express.Router();
+const mongoose=require('mongoose');
+const Music=mongoose.model('Music');
+
 
 router.get('/',(req, res)=>{
     res.render("music/addOrEdit",{
@@ -8,7 +11,12 @@ router.get('/',(req, res)=>{
 });
 
 router.post('/',(req, res)=>{
-     console.log('hi');
-    });
+    insertRecord(req,res);
+
+});
+
+function insertRecord(req,res){
+
+}
 
 module.exports=router;
