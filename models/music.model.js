@@ -2,28 +2,28 @@ const mongoose=require('mongoose');
 
 var musicSchema= new mongoose.Schema({
 
-    Instrument:{
+    instrument:{
         type:String,
-        requered:true
+        requered:'This field is required.'
         
     },
 
-    Price:{
+    price:{
         type:String,
         requered:true
     },
 
-    Color:{
+    color:{
         type:String,
         requered:true
     },
 
-    Year:{
+    year:{
         type:String,
         requered:true
     },
 
-    Comments:{
+    comments:{
         type:String,
         requered:true
     },
@@ -34,5 +34,10 @@ var musicSchema= new mongoose.Schema({
     }
     
 });
+
+//Custom validation form price
+musicSchema.path('prce').validate((val)=>
+ Price
+)
 
 mongoose.model('Music' ,musicSchema);

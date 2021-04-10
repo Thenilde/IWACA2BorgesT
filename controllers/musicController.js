@@ -17,11 +17,11 @@ router.post('/',(req, res)=>{
 
 function insertRecord(req,res){
  var music=new Music();
- music.Instrument=req.body.Instrument;
- music.Price=req.body.Price;
- music.Color=req.body.Color;
- music.Year=req.body.Year;
- music.Comments=req.body.Comments;
+ music.instrument=req.body.instrument;
+ music.price=req.body.price;
+ music.color=req.body.color;
+ music.year=req.body.year;
+ music.comments=req.body.comments;
  music.save((err,doc)=>{
   if(err)
      res.redirect('music/list');
