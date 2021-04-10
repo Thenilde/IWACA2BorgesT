@@ -23,9 +23,20 @@ function insertRecord(req,res){
  music.year=req.body.year;
  music.comments=req.body.comments;
  music.save((err,doc)=>{
-  if(err)
+  if(!err)
      res.redirect('music/list');
  else{
+
+    if(err.name==ValidationError){
+    handleValidationError(err,req.body);
+      res.render("music/addOrEdit",{
+        viewTitle:"Welcome to the instruments store B",
+        music:req.body
+    });
+
+    }
+   else
+     
      console.log('Error diring recording insert:' ,err);
  }
 
@@ -37,4 +48,18 @@ router.get('/list',(req,res)=>{
     res.json('from list');
 });
 
+function handleValidationError(err, body){
+    for (fild in err.errors){
+        switch(err.errors[fild].path){
+            case 'instrument':
+                body['instrumentError']=err.errors[field].message;
+                break;
+            case 'price':
+                body['priceError']=err.errors[field].message;
+                default:
+                break;
+
+        }
+    }
+}
 module.exports=router;

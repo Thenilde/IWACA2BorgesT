@@ -28,7 +28,7 @@ var musicSchema= new mongoose.Schema({
         requered:true
     },
 
-    Data:{
+    data:{
         type:Date,
         default:Date.now
     }
@@ -36,8 +36,10 @@ var musicSchema= new mongoose.Schema({
 });
 
 //Custom validation form price
-musicSchema.path('prce').validate((val)=>
- Price
-)
+musicSchema.path('price').validate(function (price) {
+   var emailRegex = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+   return priceRegex.test(preice.text); // Assuming price has a text attribute
+}, 'The e-mail field cannot be empty.')
+
 
 mongoose.model('Music' ,musicSchema);
